@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@font-face {
+  font-family: "Barlow-Bold";
+  src: url("/fonts/Barlow/Barlow-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow-Regular";
+  src: url("/fonts/Barlow/Barlow-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow-Black";
+  src: url("/fonts/Barlow/Barlow-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow-ExtraBold";
+  src: url("/fonts/Barlow/Barlow-ExtraBold.ttf") format("truetype");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  z-index: 9999;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1a1919;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  background-color: #CDCDCD;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* Adjust width as needed */
+}
+
+/* Define the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Change background color as needed */
+}
+
+/* Define the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Change handle color as needed */
+}
+
+/* Define scrollbar on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change hover color as needed */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.animate-flow-up {
+  animation: scroll-up-infinite 60s linear infinite;
+}
+
+.animate-flow-down {
+  align-self: flex-end;
+  animation: scroll-down-infinite 60s linear infinite;
+}
+
+
+@keyframes scroll-up-infinite {
+  100% {
+    transform: translateY(calc(-50% - (var(--item-gap))));
+  }
+}
+
+@keyframes scroll-down-infinite {
+  100% {
+    transform: translateY(calc(50% + (var(--item-gap))));
+  }
+}
+
+.scrolled-col {
+  --item-gap: 16px;
+}
+
+.top-45 {
+  transform: translate(0.6em, 1.05em) rotate(-45deg) translate(10px, -10px);
+}
+
+.bottom-45 {
+  transform: translate(0.6em, -1.05em) rotate(45deg) translate(15px, 12px);
+}
+
+.dot::after
+{
+  content: '';
+  background: #000000;
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.text-shadow {
+  -webkit-text-stroke: 0.7px #8cd903;
+}
